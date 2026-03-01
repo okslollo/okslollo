@@ -45,3 +45,82 @@
         .bio { color: #bbb; max-width: 500px; margin: 0 auto 30px; font-size: 1.1rem; }
 
         /* --- SEZIONE SOCIAL --- */
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            min-width: 160px;
+            justify-content: center;
+        }
+
+        .social-link:hover { transform: translateY(-5px); filter: brightness(1.2); }
+        
+        .tk { background: var(--tiktok); }
+        .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+        /* --- VIDEO GRID --- */
+        .feed-container { padding: 40px 20px; width: 100%; max-width: 1200px; box-sizing: border-box; }
+        .video-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 20px; 
+            justify-items: center;
+        }
+
+        footer { padding: 40px; color: #444; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/699993b98d2f9fa54679e7d9152c68ca~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=a7b089a1&x-expires=1772452800&x-signature=1VUZ%2FnatWvmO8VCykTBg770vCKg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a" alt="okslollo" class="profile-img">
+        <h1>okslollo 🚀</h1>
+        <p class="bio">Content Creator & Gamer. Benvenuti nel mio spazio ufficiale!</p>
+        
+        <div class="social-grid">
+            <a href="https://www.tiktok.com/@okslollo" target="_blank" class="social-link tk">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.instagram.com/_lorenzo__167/" target="_blank" class="social-link ig">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+        </div>
+    </header>
+
+    <div class="feed-container">
+        <h2 style="text-align: center; margin-bottom: 40px;">Gli ultimi contenuti</h2>
+        <div class="video-grid">
+            
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@okslollo/video/7528191512228793622" data-video-id="7528191512228793622" style="max-width: 605px; min-width: 325px;">
+                <section><a target="_blank" href="https://www.tiktok.com/@okslollo">@okslollo</a></section>
+            </blockquote>
+
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@okslollo/video/7515943059310349590" data-video-id="7515943059310349590" style="max-width: 605px; min-width: 325px;">
+                <section><a target="_blank" href="https://www.tiktok.com/@okslollo">@okslollo</a></section>
+            </blockquote>
+
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 okslollo - Tutti i diritti riservati.
+    </footer>
+
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+</body>
+</html>
