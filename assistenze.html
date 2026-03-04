@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Shakers | Professional Support</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;700;900&display=swap');
+
+        :root {
+            --neon-blue: #00d2ff;
+            --neon-pink: #ff007f;
+            --neon-yellow: #f9ff00;
+            --bg-dark: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --purple-vibes: #6225e6;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--purple-vibes), #2c003e);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--neon-blue);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 4rem;
+            color: white;
+            text-shadow: 4px 4px var(--neon-pink);
+            margin: 0;
+        }
+
+        .status-bar {
+            background: #111;
+            padding: 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #333;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background: #00ff00;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        /* Support Cards */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .support-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .support-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-5px);
+        }
+
+        .support-card h3 {
+            font-family: 'Bangers';
+            font-size: 1.8rem;
+            color: var(--neon-blue);
+            margin-top: 0;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            background: #111;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #222;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #222;
+            color: var(--neon-yellow);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Form */
+        .contact-form {
+            background: #111;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 60px;
+            border: 2px solid var(--neon-pink);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--neon-blue);
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            background: #222;
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: white;
+            font-family: 'Montserrat';
+        }
+
+        button {
+            background: var(--neon-pink);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Bangers';
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: var(--neon-blue);
+            box-shadow: 0 0 20px var(--neon-blue);
+            color: black;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #666;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-link:hover { color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CENTRO ASSISTENZA</h1>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 700;">Supporto Tecnico Ufficiale Game Shakers</p>
+    </header>
+
+    <div class="container">
+        <!-- Status Server -->
+        <div class="status-bar">
+            <div class="status-dot"></div>
+            <span id="status-text"><strong>STATO SISTEMI:</strong> TUTTI I SERVER SONO OPERATIVI</span>
+        </div>
+
+        <div class="support-grid">
+            <div class="support-card">
+                <h3 id="card-1-title">Documentazione</h3>
+                <p id="card-1-text">Consulta le guide ufficiali per Sky Whale, Octopie e gli altri titoli per risolvere problemi di gameplay.</p>
+            </div>
+            <div class="support-card">
+                <h3 id="card-2-title">Segnala un Bug</h3>
+                <p id="card-2-text">Hai trovato un glitch? Inviaci uno screenshot e i dettagli del tuo dispositivo per aiutarci a risolverlo.</p>
+            </div>
+            <div class="support-card">
+                <h3 id="card-3-title">Account & Privacy</h3>
+                <p id="card-3-text">Gestisci i tuoi dati o richiedi il recupero dei salvataggi cloud collegati al tuo profilo.</p>
+            </div>
+        </div>
+
+        <!-- FAQ Area -->
+        <div class="faq-section">
+            <h2 style="font-family: 'Bangers'; font-size: 2.5rem; color: var(--neon-yellow);" id="faq-title">DOMANDE FREQUENTI</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Il gioco si blocca all'avvio, cosa faccio?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Assicurati di avere l'ultima versione del gioco installata e che il tuo dispositivo abbia almeno 2GB di RAM libera. Prova a svuotare la cache dalle impostazioni del telefono.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Come posso recuperare le monete acquistate?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Vai nelle impostazioni del gioco e clicca su "Ripristina Acquisti". Se il problema persiste, inviaci la ricevuta dello store tramite il modulo qui sotto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Form -->
+        <div class="contact-form">
+            <h2 style="font-family: 'Bangers'; font-size: 2.5rem; margin-top: 0;" id="form-title">APRI UN TICKET</h2>
+            <form onsubmit="event.preventDefault(); alert('Ticket inviato con successo!');">
+                <div class="form-group">
+                    <label id="label-name">Nome Completo</label>
+                    <input type="text" placeholder="Es. Lollo" required>
+                </div>
+                <div class="form-group">
+                    <label id="label-email">Email di Contatto</label>
+                    <input type="email" placeholder="nome@esempio.com" required>
+                </div>
+                <div class="form-group">
+                    <label id="label-issue">Tipo di Problema</label>
+                    <select>
+                        <option>Problema Tecnico</option>
+                        <option>Acquisti in-game</option>
+                        <option>Segnalazione Giocatore</option>
+                        <option>Altro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="label-msg">Messaggio</label>
+                    <textarea rows="5" placeholder="Descrivi il tuo problema in dettaglio..."></textarea>
+                </div>
+                <button type="submit" id="btn-submit">INVIA RICHIESTA</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="back-link">← Torna alla Home</a>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                element.querySelector('span:last-child').innerText = "+";
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                element.querySelector('span:last-child').innerText = "-";
+            }
+        }
+    </script>
+</body>
+</html>
