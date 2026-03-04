@@ -3,432 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Shakers | Official Site</title>
+    <title>okslollo | Official Hub</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@400;900&display=swap');
-
-        :root {
-            --neon-blue: #00d2ff;
-            --neon-pink: #ff007f;
-            --neon-yellow: #f9ff00;
-            --bg-dark: #121212;
-            --purple-vibes: #6225e6;
-            --discord-blurple: #5865F2;
-            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        :root { 
+            --tiktok: #fe2c55; 
+            --instagram: #E1306C; 
+            --discord: #5865F2; 
+            --dark-bg: #0f0f0f; 
         }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-dark);
-            color: white;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-        }
-
-        .lang-switcher {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 100;
-        }
-
-        .lang-switcher select {
-            background: var(--bg-dark);
-            color: var(--neon-yellow);
-            border: 2px solid var(--neon-blue);
-            padding: 5px 10px;
-            border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            cursor: pointer;
-            max-width: 150px;
-        }
-
-        header {
-            background: linear-gradient(45deg, var(--purple-vibes), #fbc531);
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 10px solid var(--neon-pink);
-            position: relative;
-        }
-
-        h1 {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(3rem, 10vw, 5rem);
-            letter-spacing: 5px;
-            text-shadow: 5px 5px 0px var(--neon-blue);
-            margin: 0;
-            transform: rotate(-2deg);
-        }
-
-        .tagline {
-            font-weight: 900;
-            text-transform: uppercase;
-            background: var(--neon-yellow);
-            color: black;
-            display: inline-block;
-            padding: 5px 15px;
-            margin-top: 10px;
-            transform: rotate(1deg);
-        }
-
-        .about-section {
-            padding: 60px 20px;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about-content {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 30px;
-            border-left: 8px solid var(--neon-blue);
-        }
-
-        .button-group {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-action {
-            display: inline-block;
-            padding: 12px 25px;
-            color: white;
-            text-decoration: none;
-            font-family: 'Bangers', cursive;
-            font-size: 1.2rem;
-            border-radius: 10px;
-            box-shadow: 3px 3px 0px var(--neon-blue);
-            transition: 0.3s;
-        }
-
-        .btn-terms { background-color: var(--neon-pink); }
-        .btn-support { background-color: var(--purple-vibes); }
-
-        .btn-action:hover {
-            transform: scale(1.1) rotate(-2deg);
-            background-color: var(--neon-yellow);
-            color: black;
-        }
-
-        .social-section {
-            padding: 60px 20px;
-            text-align: center;
-            background: #1a1a1a;
-        }
-
-        .social-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .social-link {
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: white;
-            font-weight: 900;
-            font-family: 'Bangers', cursive;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            min-width: 150px;
-        }
-
-        .discord { background-color: var(--discord-blurple); }
-        .instagram { background: var(--insta-gradient); }
-        .tiktok { background-color: #000000; border: 2px solid white; }
-        .youtube { background-color: #FF0000; }
-
-        .social-link:hover { transform: translateY(-10px) scale(1.1); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-
-        #cookie-banner {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #1a1a1a;
-            border-top: 4px solid var(--neon-blue);
-            padding: 20px;
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background-color: var(--dark-bg); 
+            color: white; 
+            margin: 0; 
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            z-index: 1000;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.8);
         }
 
-        .cookie-buttons { margin-top: 15px; display: flex; gap: 15px; }
-
-        .btn-cookie {
-            padding: 10px 25px;
-            border: none;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .accept { background: var(--neon-blue); color: black; }
-        .decline { background: transparent; border: 1px solid #666; color: #aaa; }
-        .btn-cookie:hover { transform: scale(1.05); opacity: 0.9; }
-
-        .hq-section { padding: 40px 20px; text-align: center; }
-
-        .team-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .boss-card {
-            background: #222;
-            border: 4px solid var(--neon-blue);
-            border-radius: 20px;
-            padding: 30px;
-            width: 280px;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .boss-card:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--neon-blue); }
-        .boss-card.co-founder { border-color: var(--neon-pink); }
-
-        .label {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--neon-yellow);
-            color: black;
-            padding: 5px 20px;
-            font-weight: 900;
-            border-radius: 50px;
-        }
-
-        .games-section { padding: 60px 20px; background: #121212; }
-
-        .game-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .game-box {
-            background: white;
-            color: black;
-            border-radius: 20px;
-            overflow: hidden;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .game-img {
+        /* Header & Profilo */
+        header { 
+            padding: 50px 20px; 
+            text-align: center; 
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 5px solid var(--purple-vibes);
+            background: linear-gradient(180deg, #000 0%, var(--dark-bg) 100%);
         }
 
-        .game-info { padding: 20px; text-align: center; flex-grow: 1; }
-        .game-info h3 { font-family: 'Bangers'; font-size: 2rem; margin: 0; color: var(--purple-vibes); }
+        .profile-img { 
+            width: 130px; 
+            height: 130px; 
+            border-radius: 50%; 
+            border: 4px solid var(--tiktok); 
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(254, 44, 85, 0.3);
+        }
 
-        footer { text-align: center; padding: 40px; color: #666; font-size: 0.8rem; background: var(--bg-dark); }
+        h1 { margin: 10px 0; font-size: 2.5rem; letter-spacing: -1px; }
+        .bio { color: #bbb; max-width: 500px; margin: 0 auto 30px; font-size: 1.1rem; }
+
+        /* --- SEZIONE SOCIAL --- */
+        .social-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            text-decoration: none;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 12px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            justify-content: center;
+        }
+
+        .social-link:hover { transform: translateY(-5px); filter: brightness(1.2); }
+        
+        .tk { background: var(--tiktok); }
+        .ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .dc { background: var(--discord); }
+
+        /* --- VIDEO GRID --- */
+        .feed-container { padding: 40px 20px; width: 100%; max-width: 1200px; box-sizing: border-box; }
+        .video-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 20px; 
+            justify-items: center;
+        }
+
+        footer { padding: 40px; color: #444; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="lang-switcher">
-            <select id="languageSelect" onchange="changeLanguage()">
-                <option value="it">Italiano 🇮🇹</option>
-                <option value="en">English 🇺🇸</option>
-                <option value="es">Español 🇪🇸</option>
-                <option value="fr">Français 🇫🇷</option>
-                <option value="pt">Português 🇵🇹</option>
-            </select>
+        <img src="https://p16-pu-sign-no.tiktokcdn-eu.com/tos-no1a-avt-0068c001-no/699993b98d2f9fa54679e7d9152c68ca~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=10399&refresh_token=a7b089a1&x-expires=1772452800&x-signature=1VUZ%2FnatWvmO8VCykTBg770vCKg%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=no1a" alt="okslollo" class="profile-img">
+        <h1>okslollo 🚀</h1>
+        <p class="bio">Content Creator & Gamer. Benvenuti nel mio spazio ufficiale!</p>
+        
+        <div class="social-grid">
+            <a href="https://www.tiktok.com/@okslollo" target="_blank" class="social-link tk">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://www.instagram.com/_lorenzo__167/" target="_blank" class="social-link ig">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://discord.gg/ySVYheDuGY" target="_blank" class="social-link dc">
+                <i class="fab fa-discord"></i> Discord
+            </a>
         </div>
-        <h1>GAME SHAKERS</h1>
-        <div class="tagline" id="tagline">Creato a Brooklyn, giocato ovunque!</div>
     </header>
 
-    <section class="about-section">
-        <h2 style="font-family: 'Bangers'; font-size: 3rem; color: var(--neon-blue);" id="about-title">CHI SIAMO?</h2>
-        <div class="about-content">
-            <p style="font-size: 1.2rem;" id="about-text">Siamo la software house più pazza del mondo. Guidati dal talento di <strong>okslollo</strong> e <strong>m1xgu3l</strong>, shakeriamo codici e divertimento per creare hit leggendarie!</p>
+    <div class="feed-container">
+        <h2 style="text-align: center; margin-bottom: 40px;">Gli ultimi contenuti</h2>
+        <div class="video-grid">
             
-            <div class="button-group">
-                <a href="termini.html" target="_blank" class="btn-action btn-terms" id="btn-terms">VEDI I TERMINI</a>
-                <a href="assistenze.html" target="_blank" class="btn-action btn-support" id="btn-support">ASSISTENZA</a>
-            </div>
-        </div>
-    </section>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@okslollo/video/7528191512228793622" data-video-id="7528191512228793622" style="max-width: 605px; min-width: 325px;">
+                <section><a target="_blank" href="https://www.tiktok.com/@okslollo">@okslollo</a></section>
+            </blockquote>
 
-    <section class="hq-section">
-        <div class="team-container">
-            <div class="boss-card">
-                <div class="label">FOUNDER</div>
-                <h3 style="font-size: 2.2rem; margin: 10px 0;">okslollo</h3>
-                <p id="founder-desc">Il Capo Supremo. Il visionario che ha scosso il sistema.</p>
-            </div>
-            <div class="boss-card co-founder">
-                <div class="label" id="label-co">CO-FOUNDER</div>
-                <h3 style="font-size: 2.2rem; margin: 10px 0;">m1xgu3l</h3>
-                <p id="co-founder-desc">Il pilastro dell'azienda. Senza di lui lo shaker non gira!</p>
-            </div>
-        </div>
-    </section>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@okslollo/video/7515943059310349590" data-video-id="7515943059310349590" style="max-width: 605px; min-width: 325px;">
+                <section><a target="_blank" href="https://www.tiktok.com/@okslollo">@okslollo</a></section>
+            </blockquote>
 
-    <section class="games-section">
-        <h2 style="text-align: center; font-family: 'Bangers'; font-size: 3rem; color: var(--neon-yellow); margin-bottom: 40px;" id="games-title">I NOSTRI GIOCHI</h2>
-        <div class="game-grid">
-            <div class="game-box">
-                <img src="https://static.wikia.nocookie.net/gameshakers/images/6/69/1_sky_whale.jpg" alt="Sky Whale" class="game-img">
-                <div class="game-info">
-                    <h3>SKY WHALE</h3>
-                    <p id="game1-desc">Fai volare il narvalo tra le ciambelle!</p>
-                </div>
-            </div>
-            <div class="game-box">
-                <img src="https://m.media-amazon.com/images/M/MV5BZTA0MDkxYmQtN2I0Yy00ZjEwLTgyMmMtMTE3OTZlMWMzMGI0XkEyXkFqcGc@._V1_.jpg" alt="Octopie" class="game-img">
-                <div class="game-info">
-                    <h3>OCTOPIE</h3>
-                    <p id="game2-desc">Consegna pizze come un vero polpo sui pattini!</p>
-                </div>
-            </div>
-            <div class="game-box">
-                <img src="https://m.media-amazon.com/images/I/81IjQYwQh6L.png" alt="Llama Llama Spit Spit" class="game-img">
-                <div class="game-info">
-                    <h3>LLAMA SPIT SPIT</h3>
-                    <p id="game3-desc">Sputa per sconfiggere i nemici pixelati!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="social-section">
-        <h2 style="font-family: 'Bangers'; font-size: 3rem; color: var(--neon-pink);" id="social-title">SEGUICI SUI SOCIAL!</h2>
-        <div class="social-container">
-            <a href="https://discord.gg/ySVYheDuGY" target="_blank" class="social-link discord">Discord</a>
-            <a href="https://www.instagram.com/game_shakers_studios/" target="_blank" class="social-link instagram">Instagram</a>
-            <a href="https://www.tiktok.com/@game_shakers_studios" target="_blank" class="social-link tiktok">TikTok</a>
-            <a href="https://www.youtube.com/@gamashakers" target="_blank" class="social-link youtube">YouTube</a>
-        </div>
-    </section>
-
-    <footer>
-        <span id="footer-text">&copy; 2026 GAME SHAKERS | PROPRIETÀ DI okslollo & m1xgu3l</span>
-    </footer>
-
-    <div id="cookie-banner">
-        <p id="cookie-text">Questo sito utilizza i cookie per garantirti la migliore esperienza possibile. Accetti?</p>
-        <div class="cookie-buttons">
-            <button class="btn-cookie accept" onclick="closeBanner()" id="cookie-accept">ACCETTA TUTTO</button>
-            <button class="btn-cookie decline" onclick="closeBanner()" id="cookie-decline">RIFIUTA</button>
         </div>
     </div>
 
-    <script>
-        const translations = {
-            it: {
-                tagline: "Creato a Brooklyn, giocato ovunque!",
-                aboutTitle: "CHI SIAMO?",
-                aboutText: "Siamo la software house più pazza del mondo. Guidati dal talento di <strong>okslollo</strong> e <strong>m1xgu3l</strong>, shakeriamo codici e divertimento per creare hit leggendarie!",
-                btnTerms: "VEDI I TERMINI",
-                btnSupport: "ASSISTENZA",
-                founderDesc: "Il Capo Supremo. Il visionario che ha scosso il sistema.",
-                coLabel: "CO-FOUNDER",
-                coFounderDesc: "Il pilastro dell'azienda. Senza di lui lo shaker non gira!",
-                gamesTitle: "I NOSTRI GIOCHI",
-                game1Desc: "Fai volare il narvalo tra le ciambelle!",
-                game2Desc: "Consegna pizze come un vero polpo sui pattini!",
-                game3Desc: "Sputa per sconfiggere i nemici pixelati!",
-                socialTitle: "SEGUICI SUI SOCIAL!",
-                footerText: "&copy; 2026 GAME SHAKERS | PROPRIETÀ DI okslollo & m1xgu3l",
-                cookieText: "Questo sito utilizza i cookie per garantirti la migliore esperienza possibile. Accetti?",
-                cookieAccept: "ACCETTA TUTTO",
-                cookieDecline: "RIFIUTA"
-            },
-            en: {
-                tagline: "Made in Brooklyn, played everywhere!",
-                aboutTitle: "WHO WE ARE?",
-                aboutText: "We are the craziest software house in the world. Led by the talent of <strong>okslollo</strong> & <strong>m1xgu3l</strong>, we mix code and fun to create legendary hits!",
-                btnTerms: "VIEW COMPANY TERMS",
-                btnSupport: "SUPPORT",
-                founderDesc: "The Supreme Leader. The visionary who shook the system.",
-                coLabel: "CO-FOUNDER",
-                coFounderDesc: "The cornerstone of the company. Without him, the shaker wouldn't work!",
-                gamesTitle: "OUR GAMES",
-                game1Desc: "Fly the narwhal between the donuts!",
-                game2Desc: "Deliver pizzas like a real octopus on skates!",
-                game3Desc: "Spit to defeat pixelated enemies!",
-                socialTitle: "FOLLOW US ON SOCIALS!",
-                footerText: "&copy; 2026 GAME SHAKERS | PROPERTY OF okslollo & m1xgu3l",
-                cookieText: "This site uses cookies to ensure you get the best experience possible. Do you accept?",
-                cookieAccept: "ACCEPT ALL",
-                cookieDecline: "DECLINE"
-            },
-            es: {
-                tagline: "¡Creado en Brooklyn, jugado en todas partes!",
-                aboutTitle: "¿QUIÉNES SOMOS?",
-                aboutText: "Somos la software house más loca del mundo. Liderados por el talento de <strong>okslollo</strong> y <strong>m1xgu3l</strong>, ¡mezclamos código y diversión!",
-                btnTerms: "VER TÉRMINOS",
-                btnSupport: "SOPORTE",
-                founderDesc: "El Jefe Supremo. El visionario que sacudió el sistema.",
-                coLabel: "CO-FUNDADOR",
-                coFounderDesc: "El pilar de la empresa. ¡Sin él, el shaker no gira!",
-                gamesTitle: "NUESTROS JUEGOS",
-                game1Desc: "¡Haz volar al narval entre las rosquillas!",
-                game2Desc: "¡Entrega pizzas como un pulpo en patines!",
-                game3Desc: "¡Escupe para derrotar a los enemigos pixelados!",
-                socialTitle: "¡SÍGUENOS!",
-                footerText: "&copy; 2026 GAME SHAKERS | PROPIEDAD DE okslollo & m1xgu3l",
-                cookieText: "Este sitio utiliza cookies para mejorar tu experiencia. ¿Aceptas?",
-                cookieAccept: "ACEPTAR TODO",
-                cookieDecline: "RECHAZAR"
-            }
-            // Altre lingue...
-        };
+    <footer>
+        &copy; 2026 okslollo - Tutti i diritti riservati.
+    </footer>
 
-        function changeLanguage() {
-            const lang = document.getElementById('languageSelect').value;
-            const t = translations[lang] || translations['en'];
+    <script async src="https://www.tiktok.com/embed.js"></script>
 
-            document.getElementById('tagline').innerText = t.tagline;
-            document.getElementById('about-title').innerText = t.aboutTitle;
-            document.getElementById('about-text').innerHTML = t.aboutText;
-            document.getElementById('btn-terms').innerText = t.btnTerms;
-            document.getElementById('btn-support').innerText = t.btnSupport;
-            document.getElementById('founder-desc').innerText = t.founderDesc;
-            document.getElementById('label-co').innerText = t.coLabel;
-            document.getElementById('co-founder-desc').innerText = t.coFounderDesc;
-            document.getElementById('games-title').innerText = t.gamesTitle;
-            document.getElementById('game1-desc').innerText = t.game1Desc;
-            document.getElementById('game2-desc').innerText = t.game2Desc;
-            document.getElementById('game3-desc').innerText = t.game3Desc;
-            document.getElementById('social-title').innerText = t.socialTitle;
-            document.getElementById('footer-text').innerHTML = t.footerText;
-            document.getElementById('cookie-text').innerText = t.cookieText;
-            document.getElementById('cookie-accept').innerText = t.cookieAccept;
-            document.getElementById('cookie-decline').innerText = t.cookieDecline;
-        }
-
-        function closeBanner() {
-            document.getElementById('cookie-banner').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
